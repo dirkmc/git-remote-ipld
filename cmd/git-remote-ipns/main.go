@@ -2,10 +2,10 @@ package main
 
 import (
 	"fmt"
+	"github.com/magik6k/git-remote-ipld/core"
 	"log"
 	"os"
 	"strings"
-	"github.com/magik6k/git-remote-ipld/core"
 )
 
 const (
@@ -22,7 +22,7 @@ func Main() error {
 		remoteName = remoteName[len(IPNS_PREFIX):]
 	}
 
-	remote, err := core.NewRemote(&IpnsHandler{remoteName:remoteName})
+	remote, err := core.NewRemote(&IpnsHandler{remoteName: remoteName})
 	if err != nil {
 		return err
 	}

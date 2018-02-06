@@ -53,6 +53,8 @@ func (f *Fetch) doWork() error {
 
 		c := cid.NewCidV1(cid.GitRaw, mhash)
 
+	logger := log.New(os.Stderr, "", 0)
+	logger.Printf("fetch: %s %s %s", hash, c.String(), c.Hash().B58String())
 		f.log.Printf("%s %s\r\x1b[A", hash, c.String())
 
 		objectPath, err := prepHashPath(f.objectDir, hash)
